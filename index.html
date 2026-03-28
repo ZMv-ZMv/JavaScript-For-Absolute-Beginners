@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css">
+  <title>JavaScript For Absolute Beginners</title>
+</head>
+
+
+<body>
+  
+  <h2>3. Conditionals, Logical Operators & Loops</h2>
+    <h3>2. Implementing If Conditional Statement</h3>
+  
+  <h2>6. JavaScript Document Object Model DOM & DOM Events</h2><div>
+    <p id="ln1">2. Get Element By ID-converted</p>
+    <p id="ln2">Esta es una línea aleatoria en el sitio</p>
+    <p id="ln3">Esta es la segunda línea</p>
+
+    <ul>
+      <li>Té</li>
+      <li>Café</li>
+      <li>Té verde</li>
+      <li>Jugo de naranja</li>
+    </ul>
+
+    <h3 onclick="hello(this)">20. Introduction To Events - con objeto this</h3>
+    <h3 onclick="hello1(this.innerHTML)">20. Introduction To Events - con innerTHML</h3>
+    <h3 onclick="console.log(this.innerHTML)">20. Introduction To Events - con console.log</h3>
+    <h3 onclick="this.innerHTML='Cambiado al hacer clic'">20. Introduction To Events - cambiar la hacer clic</h3>
+
+    <h3 id="conEventListenerClic">22. AddEventListener</h3>
+    <h3 id="conEventListenerMouseover">23. Mouseover & Mouseout</h3>
+
+    <h3>25. Coding Challenge Part 10 DOM & DOM Events (Solution)-converted</h3>
+      <p>Building a simple counter.</p>
+      <button class="button button1">Green</button> 
+      <button class="button button2">Blue</button> 
+      <style>
+        .button {
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+          border-radius: 5px;
+          width: 150px;
+        }
+        .button1 {background-color: #4caf50;}
+        .button2 {background-color: #008cba;}
+      </style>
+
+    <h3>27. Coding Challenge Part 11 Simple Interest Calculator (Solution)</h3>
+      <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+      <div class="container">
+        <div class="row">
+          <div class="col=md-6">
+            <label>Principal Amount:</label>
+            <input type="text" placeholder="Eg: $1000" name="" id="principalAmount"><br>
+            <label>Number of years :</label>
+            <input type="text" placeholder="Eg: 1(in years)" id="timePeriod"><br>
+            <label>Rate of interest %</label>
+            <input type="text" placeholder="Eg: 7.5%" name="" id="interestRate">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-6">
+            <button class="btn btn-primary">Calculate</button>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-12">
+            <label class="interest">Interest to be paid: <span></span></label>
+          </div>
+        </div>
+      </div>
+
+    <h3>29. Coding Challenge Part 12 Todo App Part 1 (Solution)-converted</h3>
+      <div class="container">
+        <h3>Todo App</h3>
+        <br>
+        <div class="form-group">
+          <label for="">Add Task</label>
+          <input class="taskinput" type="text" name="" value="">
+          <button class="btn addtask btn-success" type="button" name="button">Add</button>
+        </div>
+        <br>
+        <h5>Todo List</h5>
+        <ul class="list-group todo-list">
+
+        </ul>
+
+      </div>
+  </div>
+  
+  <h2>7. Object Oriented Programming In Javascript</h2><div>
+    <h3>4. Using Classes</h3>
+      <p>Para crear una clase en JavaScript:</p>
+      <pre>
+        class NombreClase { // el nombre de la clase siempre empieza en mayúsculas
+          constructor (){   // siempre debe existir un método constructor. Éste método siempre es automáticamente llamado cada vez que se crea un objeto.
+
+          }
+        }
+      </pre>
+      <p>Para crea un objeto con esa clase:</p>
+      <pre>
+        let objeto = new NombreClase()
+      </pre>
+
+    
+  </div>
+
+</body>
+
+<script src="./app.js"></script>
+</body>
+
+</html>
