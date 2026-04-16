@@ -10,30 +10,132 @@
 
 <body>
   
-  <h2>3. Conditionals, Logical Operators & Loops</h2>
-    <h3>2. Implementing If Conditional Statement</h3>
-  
-  <h2>6. JavaScript Document Object Model DOM & DOM Events</h2><div>
+  <h2>3. Conditionals, Logical Operators & Loops</h2><div>
+    <h3>2. Implementing If Conditional Statement</h3><div>
+
+    </div>
+  </div>
+
+  <h2>5. Functional Programming In JavaScript</h2>
+
+  <p>VER DONDE VA ESTO..............:</p>
+  <p>se puede agregar un evento onclic a un elemento desde javascript de manera facil:</p>
+  <p class="code">
+    let hc = document.querySelector(".hacerClic") // se guarda en una variable un objeto
+  </p>
+  <p class="code">
+    hc.onclick = () => {hc.textContent = "texto cambiado"} // se agrega el evento onclic al objeto con una función.
+  </p>
+
+  <h2>6. JavaScript Document Object Model DOM & DOM Events</h2>
+    <h3>2. Get Element By ID.mp4</h3><div>
     <p id="ln1">2. Get Element By ID-converted</p>
     <p id="ln2">Esta es una línea aleatoria en el sitio</p>
     <p id="ln3">Esta es la segunda línea</p>
+    </div>
+    <h3>3. Get Element By Tag Name & Class Name.mp4</h3><div>
+    <p>Get Element By Tag Name & Get Element By Class Name devuelven una colección HTML. Es como si fuera una matriz. Para acceder a un elemento dentro de la colección utilizar la notación "[n]", por ejemplo, en los siguientes párrafos:</p>
+    <p class="code paragraph">Este es el primer párrafo con la clase "paragraph"</p>
+    <p class="code paragraph">Este es el segundo párrafo con la clase "paragraph"</p>
+    <p class="code paragraph">Este es el tercer párrafo con la clase "paragraph"</p>
+    <p class="code paragraph">Este es el cuarto párrafo con la clase "paragraph"</p>
+    <p class="code paragraph">Este es el quinto párrafo con la clase "paragraph"</p>
+    
+    <p>Obtener todos los elementos con la clase "paragraph":</p>
+    <p class="code">document.getElementByClassName("paragraph")</p>
+    <p>devuelve:</p>
+    <p class="code">HTMLCollection {...}</p>
 
-    <ul>
-      <li>Té</li>
-      <li>Café</li>
-      <li>Té verde</li>
-      <li>Jugo de naranja</li>
-    </ul>
+    <p>obtener el tercer párrafo: </p>
+    <p class="code">document.getElementByClassName("paragraph")[2]</p>
+    
+    <p>Una ves seleccionado el elemento se podría por ejemplo cambiar el texto con el método InnerHTML o InnerText u otros.</p>
+    </div>
+    <h3>4. innerText & TextContent.mp4</h3><div>
+      <p>innerText: sirve para tratar lo que está dentro de un elemento pero como texto, las etiquetas o códigos especiales se muestran como texto, también se tiene en cuenta el estilo. No devolverá el texto que ha sido "escondido" con CSS (con 'display: none' o 'visibility: hidden'). En segundo lugar, 'innerText' devuelve el texto con los saltos de línea y el espaciado que se ve en el navegador.</p>
+      <p>texContent: sirve para establecer o devolver el contenido de texto de un nodo y todos sus descendientes. Si se usa para establecer el texto, eliminará todos los nodos hijos y los reemplazará con un solo nodo de texto con el valor especificado. </p>
+      <p>innerHTML sirve para tratar un elemento con tus etiquetas procesadas como etiquetas, es decir, como código, incluye los espacios en blanco y saltos de línea. 'innerHTML' es la única propiedad de las tres que permite manipular el HTML dentro de un elemento. Esto significa que puedes usar 'innerHTML' para agregar, eliminar o modificar etiquetas HTML dentro de un elemento. 'textContent' y 'innerText', por otro lado, sólo te permitirán manipular el texto.</p>
+      <ul>
+        <li>Té</li>
+        <li>Café</li>
+        <li>Té &lt;texto <span>aqui</span> dentro&gt; verde</li>
+        <li>Jugo de naranja</li>
+      </ul>
+      <p onclick="v06_04_e01(this)">Abre la consola y haz clic aquí para ver los resultados de los tres métodos aplicados sobre la lista anterior.</p>
+    </div>
+    <h3>5. QuerySelector.mp4</h3><div>
+      <p>Para seleccionar elementos através de selectores de CSS. Este método devuelve el primer elemento encontrado.</p>
+      <p class="code">
+        document.querySelector("ul") // para seleccionar el primer elemento ul</p>
+      <p class="code">
+        document.querySelector(".parrafo") // para seleccionar el primer elemento con la clase "parrafo"</p>
+      <p class="code">
+        document.querySelector("#especial") // para selccionar el primer elemento con el id "especial"
+      </p>
 
-    <h3 onclick="hello(this)">20. Introduction To Events - con objeto this</h3>
-    <h3 onclick="hello1(this.innerHTML)">20. Introduction To Events - con innerTHML</h3>
-    <h3 onclick="console.log(this.innerHTML)">20. Introduction To Events - con console.log</h3>
-    <h3 onclick="this.innerHTML='Cambiado al hacer clic'">20. Introduction To Events - cambiar la hacer clic</h3>
+      <p>En caso se desee seleccionar cualquier otro elemento, se debe usar querySelectorAll, que devuelve una matriz con todos elementos encontrados</p>
+    </div>
+    <h3 id="v06_06">6. Parent & Child Nodes.mp4</h3><div>
+      <p>Para obtener el padre de un elemento se puede usar dos nodos:</p>
+      <p class="code">let padre = document.getElementById('elemento').parentNode</p>
+      <p class="code">let padre = document.getElementById('elemento').parentElement</p>
 
-    <h3 id="conEventListenerClic">22. AddEventListener</h3>
-    <h3 id="conEventListenerMouseover">23. Mouseover & Mouseout</h3>
+      <p>Para obtener el hijo de un nodo se puede utilizar varios nodos:</p>
+      <p class="code">document.getElementById('elemento').childNodes // notar que tb devuelve los saltos de línea</p>
+      <p class="code">document.getElementById('elemento').children // este devuelve los tags ok</p>
+      <p class="code">document.getElementById('elemento').childElementCount</p>
+      <p class="code">document.getElementById('elemento').firstChild</p>
+      <p class="code">document.getElementById('elemento').firstElementChild</p>
+      <p class="code">document.getElementById('elemento').lastChild</p>
+      <p class="code">document.getElementById('elemento').lastElementChild</p>
+    </div>
+    <h3 id="v06_07">7. Siblings.mp4</h3><div>
+      <p>Para trabajar con los hermanos de un elemento usar los métodos:</p>
+      <p class="code">document.getElementById('elemento').nextElementSibling</p>
+      <p class="code">document.getElementById('elemento').previousElementSibling</p>
+      <p class="code">document.getElementById('elemento').nextSibling</p>
+      <p class="code">document.getElementById('elemento').previousSibling</p>
+      <p>También se podría usar un bucle while para iterar sobre todos los hermanos de un primer elemento.</p>
+      <p onclick="v06_07_e01()">Abre la consola y haz clic aqui para ver el resultado de la iteración.</p> 
+      <ul id="v06_07_e01">
+        <li>Té</li>
+        <li>Café</li>
+        <li>Té verde</li>
+        <li>Jugo de naranja</li>
+      </ul>
+    </div>
+    <h3 id="v06_08">8. Create Element.mp4</h3><div>
+      <p>El método <span class="code">createElement</span> sive para crear elementos (etiquetas) en HTML. necesita dos argumentos uno la etiqueta (como texto) y otro no obligatorio, unas opciones (no importantes...) </p>
+      <div class="sintaxis">
+        <p>let element = document.createElement(tagName, [options]);</p>
+      </div>
+      <p>Este método no agrega el elemento a la página, lo que hace es crearlo en memoria, es por ello que es neceario asignar el restulado de este método a una variable. Para agregar este nuevo elemento con un contenido a la página web son mínimos dos pasos más:</p>
+      <ol>
+        <li>Utilizar métodos como textContent o createTextNode para agregarle contenido al elemento.</li>
+        <li>Utilizar métodos como appendChild o append para agregar el elemento a la página web.</li>
+      </ol>
+      chequear:
+      <p><a href="https://developer.mozilla.org/es/docs/Web/API/Document/createElement">https://developer.mozilla.org/es/docs/Web/API/Document/createElement</a></p>
+      <p><a href="https://lenguajejs.com/dom/crear/createelement/">https://lenguajejs.com/dom/crear/createelement/</a></p>
+      <p><a href="https://lenguajejs.com/dom/crear/node-api/">https://lenguajejs.com/dom/crear/node-api/</a></p>
+      <p><a href="https://www.linkedin.com/learning/javascript-enhancing-the-dom-23744475/creating-elements-with-createelement">https://www.linkedin.com/learning/javascript-enhancing-the-dom-23744475/creating-elements-with-createelement</a></p>
+    </div>
 
-    <h3>25. Coding Challenge Part 10 DOM & DOM Events (Solution)-converted</h3>
+    <h3 onclick="hello(this)">20. Introduction To Events - con objeto this</h3><div>
+
+    <p onclick="hello1(this.innerHTML)">20. Introduction To Events - con innerTHML</p>
+    <p onclick="console.log(this.innerHTML)">20. Introduction To Events - con console.log</p>
+    <p onclick="this.innerHTML='Cambiado al hacer clic'">20. Introduction To Events - cambiar la hacer clic</p>
+
+    </div>
+
+    <h3 id="conEventListenerClic">22. AddEventListener</h3><div>
+
+    </div>
+    <h3 id="conEventListenerMouseover">23. Mouseover & Mouseout</h3><div>
+
+    </div>
+    <h3>25. Coding Challenge Part 10 DOM & DOM Events (Solution)-converted</h3><div>
       <p>Building a simple counter.</p>
       <button class="button button1">Green</button> 
       <button class="button button2">Blue</button> 
@@ -54,8 +156,8 @@
         .button1 {background-color: #4caf50;}
         .button2 {background-color: #008cba;}
       </style>
-
-    <h3>27. Coding Challenge Part 11 Simple Interest Calculator (Solution)</h3>
+    </div>
+    <h3>27. Coding Challenge Part 11 Simple Interest Calculator (Solution)</h3><div>
       <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
       <div class="container">
         <div class="row">
@@ -81,8 +183,8 @@
           </div>
         </div>
       </div>
-
-    <h3>29. Coding Challenge Part 12 Todo App Part 1 (Solution)-converted</h3>
+    </div>
+    <h3>29. Coding Challenge Part 12 Todo App Part 1 (Solution)-converted</h3><div>
       <div class="container">
         <h3>Todo App</h3>
         <br>
@@ -98,29 +200,11 @@
         </ul>
 
       </div>
-  </div>
+    </div>
+
+
+
+</body>
   
-  <h2>7. Object Oriented Programming In Javascript</h2><div>
-    <h3>4. Using Classes</h3>
-      <p>Para crear una clase en JavaScript:</p>
-      <pre>
-        class NombreClase { // el nombre de la clase siempre empieza en mayúsculas
-          constructor (){   // siempre debe existir un método constructor. Éste método siempre es automáticamente llamado cada vez que se crea un objeto.
-
-          }
-        }
-      </pre>
-      <p>Para crea un objeto con esa clase:</p>
-      <pre>
-        let objeto = new NombreClase()
-      </pre>
-
-    
-  </div>
-
-</body>
-
 <script src="./app.js"></script>
-</body>
-
 </html>

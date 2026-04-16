@@ -124,6 +124,69 @@ mate.add(4, 6) // se ejecuta la fumción suma desde el método add del obj mate.
 ///////////////////////////////////////////////////////////////////////////////
 // 6. JavaScript Document Object Model DOM & DOM Events
 
+///////////////////////////////////////
+// 3. Get Element By Tag Name & Class Name
+document.getElementsByClassName('paragraph')
+
+///////////////////////////////////////
+// 4. innerText & TextContent
+function v06_04_e01 (obj){
+  console.log("Con innerText:")
+  console.log(obj.previousElementSibling.innerText)
+  console.log("Con textContent:")
+  console.log(obj.previousElementSibling.textContent)
+  console.log("Con innerHTML:")
+  console.log(obj.previousElementSibling.innerHTML)
+}
+
+///////////////////////////////////////
+// 5. QuerySelector
+
+document.querySelector("ul") // para seleccionar el primer elemento ul
+
+document.querySelector(".parrafo") // para seleccionar el primer elemento con la clase "parrafo"
+
+document.querySelector("#especial") // para selccionar el primer elemento con el id "especial"
+
+///////////////////////////////////////
+// 6. Parent & Child Nodes
+
+// para obtener el padre:
+document.getElementById('v06_06').parentNode
+document.getElementById('v06_06').parentElement
+// para obtener el hijo
+document.getElementById('v06_06').childNodes
+document.getElementById('v06_06').children
+document.getElementById('v06_06').childElementCount
+document.getElementById('v06_06').firstChild
+document.getElementById('v06_06').firstElementChild
+document.getElementById('v06_06').lastChild
+document.getElementById('v06_06').lastElementChild
+
+///////////////////////////////////////
+// 7. Siblings-converted
+
+// para obtener el siguiente hermano:
+document.getElementById('v06_07').nextElementSibling
+document.getElementById('v06_07').previousElementSibling
+document.getElementById('v06_07').nextSibling
+document.getElementById('v06_07').previousSibling
+
+function v06_07_e01 (){
+  let first = document.getElementById('v06_07_e01').firstElementChild
+  console.log(`El primer elemento es: ${first.textContent}`)
+  // console.log(first.textContent)
+  console.log("El resto de hermanos son:")
+  let ns = first.nextElementSibling
+  while (ns) {
+    console.log(ns.textContent)
+    ns = ns.nextElementSibling
+  }
+}
+
+
+
+
 let parent = document.querySelector("ul")
 
 let item1 = document.createElement("li")
@@ -134,7 +197,7 @@ item2.textContent = "Mango"
 
 parent.prepend(item1, item2) // para agregar al inicio
 parent.append(item1, item2) // para agregar al final
-// en este caso sólo termina agregando al final ya que aunque primero agrega al inicio, luego la siguiente línea, agrega (mueve) los items al final ya que son los mismos objetos contenidos en las variables item1 e item2.
+// en este caso sólo se ve el efecto de append, agregando item1 e item2 al final, esto debido a que primero los agregas al inicio con prepend, pero luego la siguiente línea, los agrega (mueve) al final ya que son los mismos objetos contenidos en las variables item1 e item2.
 
 
 ///////////////////////////////////////
@@ -162,7 +225,7 @@ let txtAnterior = elementMouseOver.innerText
 
 elementMouseOver.addEventListener("mouseover",function(){
   console.log("pusiste el mouse sobre un elemento con addEventListener (mouseover)")
-  this.innerText="... esperando que saques el mouse..."
+  this.innerText="... sácame el mouse de encima !!!! >( "
   this.style.color = "red"
 })
 elementMouseOver.addEventListener("mouseout", function(){
@@ -258,47 +321,4 @@ function addButtonClicked (){
 
   taskInput.value = ""
 
-}
-
-
-///////////////////////////////////////////////////////////////////////////////
-// 7. Object Oriented Programming In Javascript
-
-
-///////////////////////////////////////
-// 4. Using Classes
-// 5. Adding Methods To A Class-converted
-
-// Creando la clase Student. La primera letra del nombre de la clase siempre en mayúscula
-class Student {
-  // siempre debe existir un método constructor. Éste método siempre es automáticamente llamado cada vez que se crea un objeto.
-  constructor (id, name , mark){ // estos argunmentos pueden tener cualquier nombre pero es ideal que tengan el mismo nombre que la propiedad final.
-    this.id = id
-    this.name = name
-    this.mark = mark
-  }
-  // se pueden crear más métodos de acuerdo las necesidades. Este método muestra los datos del objeto
-  display () {
-    for (let x in this){ // x funciona como la clave de cada ítem
-      console.log(`${x} : ${this[x]}`)
-    }
-    // console.log("Id: " + this.id)
-    // console.log("Nombre: " + this.name)
-    // console.log("Marca: " + this.mark)    
-  }
-  // método saludar
-  saludar (){
-    console.log(`Hola, soy el estudiante ${this.name}. Ejecuta el método display() para más información sobre mi.`)
-  }
-}
-// Creando un objeto con la clase Student
-let student1 = new Student (1, "John", 98)
-// invocando el método display() de la clase Student
-student1.display()
-
-// Creando la clase Teacher
-class Teacher {
-  constructor(id, name,){
-
-  }
 }
