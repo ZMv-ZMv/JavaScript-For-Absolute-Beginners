@@ -184,19 +184,49 @@ function v06_07_e01 (){
   }
 }
 
+///////////////////////////////////////
+// 8. Create Element-converted.mp4
+
+// v06_08_e01 - agregar elementos con createElement
+let listitem01 = document.createElement("li") // se crea el elemento li 01
+let listitem02 = document.createElement("li") // se crea el elemento li 02
+let listitem03 = document.createElement("li") // se crea el elemento li 03
+let listitem04 = document.createElement("li") // se crea el elemento li 04
+listitem01.textContent = "Agregado con appendChild" // agrega contenido a li 01
+listitem02.textContent = "Agregado con prepend" // agrega contenido a li 02
+listitem03.textContent = "Agregado con append" // agrega contenido a li 03
+listitem04.textContent = "Otro agregado con appendChild" // agrega contenido a li 04
+
+let padre = document.getElementById('v06_08_e01') // se ubica y guarda al padre
+
+function v06_08_e01_01 (){
+  padre.appendChild(listitem01)
+}
+function v06_08_e01_02 (){
+  padre.prepend(listitem02)
+}
+function v06_08_e01_03 (){
+  padre.append(listitem03)
+}
+function v06_08_e01_04 (){
+  padre.appendChild(listitem04)
+}
+
+// para agrear items se puede utilizar:
+
+//padre.prepend()
 
 
+// let parent = document.querySelector("ul")
 
-let parent = document.querySelector("ul")
+// let item1 = document.createElement("li")
+// item1.textContent = "Apple"
 
-let item1 = document.createElement("li")
-item1.textContent = "Apple"
+// let item2 = document.createElement("li")
+// item2.textContent = "Mango"
 
-let item2 = document.createElement("li")
-item2.textContent = "Mango"
-
-parent.prepend(item1, item2) // para agregar al inicio
-parent.append(item1, item2) // para agregar al final
+// parent.prepend(item1, item2) // para agregar al inicio
+// parent.append(item1, item2) // para agregar al final
 // en este caso sólo se ve el efecto de append, agregando item1 e item2 al final, esto debido a que primero los agregas al inicio con prepend, pero luego la siguiente línea, los agrega (mueve) al final ya que son los mismos objetos contenidos en las variables item1 e item2.
 
 

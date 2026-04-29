@@ -105,11 +105,11 @@
       </ul>
     </div>
     <h3 id="v06_08">8. Create Element.mp4</h3><div>
-      <p>El método <span class="code">createElement</span> sive para crear elementos (etiquetas) en HTML. necesita dos argumentos uno la etiqueta (como texto) y otro no obligatorio, unas opciones (no importantes...) </p>
+      <p>El método <span class="code">createElement</span> sive para crear elementos (una etiqueta) en HTML. Necesita dos argumentos uno la etiqueta (como texto) y otro no obligatorio, unas opciones (no importantes...) </p>
       <div class="sintaxis">
         <p>let element = document.createElement(tagName, [options]);</p>
       </div>
-      <p>Este método no agrega el elemento a la página, lo que hace es crearlo en memoria, es por ello que es neceario asignar el restulado de este método a una variable. Para agregar este nuevo elemento con un contenido a la página web son mínimos dos pasos más:</p>
+      <p>Este método no agrega automáticamente el elemento a la página, lo que hace es crearlo en memoria, es por ello que es neceario asignar el restulado de este método a una variable. Para agregar este nuevo elemento con un contenido a la página web son mínimos dos pasos más:</p>
       <ol>
         <li>Utilizar métodos como textContent o createTextNode para agregarle contenido al elemento.</li>
         <li>Utilizar métodos como appendChild o append para agregar el elemento a la página web.</li>
@@ -119,6 +119,46 @@
       <p><a href="https://lenguajejs.com/dom/crear/createelement/">https://lenguajejs.com/dom/crear/createelement/</a></p>
       <p><a href="https://lenguajejs.com/dom/crear/node-api/">https://lenguajejs.com/dom/crear/node-api/</a></p>
       <p><a href="https://www.linkedin.com/learning/javascript-enhancing-the-dom-23744475/creating-elements-with-createelement">https://www.linkedin.com/learning/javascript-enhancing-the-dom-23744475/creating-elements-with-createelement</a></p>
+      
+      <button onclick="v06_08_e01_01()">Agregar ítem con appendChild</button>
+      <button onclick="v06_08_e01_02()">Agregar ítem con prepend</button>
+      <button onclick="v06_08_e01_03()">Agregar ítem con append</button>
+      <button onclick="v06_08_e01_04()">Agregar otro ítem con appendChild</button>
+
+      <ul id="v06_08_e01">
+        <!-- aqui se agregarán li através de javascript -->
+      </ul>
+
+      <p>Notar que append y prepend pueden agregar más de un ítem: <code>padre.prepend(item1, item2)</code> y <code>parent.append(item1, item2)</code></p>
+
+      <p>Ver otros métodos de agregar elementos como insertAdjacentElement, insertAdjacentText. <a href="https://lenguajejs.com/dom/crear/insertadjacent-api/">Aquí</a> y <a href="https://www.freecodecamp.org/news/javascript-insertadjacenthtml-method-efficient-dom-manipulation/">aquí</a>, <a href="https://developer.mozilla.org/es/docs/Web/API/Element/insertAdjacentHTML">aquí</a>, <a href="https://stackoverflow-com.translate.goog/questions/16126960/what-is-the-difference-between-appendchild-insertadjacenthtml-and-innerhtml?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc">aquí</a>, <a href="https://css--tricks-com.translate.goog/comparing-methods-for-appending-and-inserting-with-javascript/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc">aquí</a> más info de estos métodos.</p>
+
+      <p>Falta ver lo de inseradjacentHTML y otros temas...</p>
+
+    </div>
+
+    <h3 id="v06_09">9. Document Fragment.mp4</h3><div>
+      <p>La interfaz DocumentFragment representa un objeto de documento mínimo que no tiene padre. Se utiliza como una versión ligera de Document que almacena un segmento de una estructura de documento compuesta de nodos como un documento estándar. La gran diferencia se debe al hecho de que el fragmento de documento no forma parte de la estructura de árbol del documento activo. Los cambios realizados en el fragmento no afectan el documento (incluso en reflow) ni inciden en el rendimiento cuando se realizan cambios.</p>
+      <p class="code">
+        let df = new DocumentFragment() // se crea un document fragment y se guarda en una variable <br>
+        let titulo = document.createElement("h1") // se crea un elemento título <br>
+        titulo.textContent = "Título Principal" // se agrega texto al titulo <br>
+        let subtitulo = document.createElement("h2") // se crea un elemento subtitulo <br>
+        subtitulo.textContent = "Sub título" // se añade texto al subtitulo  <br>
+         <br>
+        df.appendChild(titulo) // se agrega el titulo al fragmento <br>
+        df.appendChild(subtitulo) // se agrega el subtitulo al fragmento <br>
+         <br>
+        document.body.appendChild(df) // se agrega al body (cuerpo de la página) el fragmento.
+      </p>
+    </div>
+
+    <h3 id="v06_10">10. Insert Before.mp4</h3><div>
+      <p>Inserta un nodo antes del nodo de referencia, como hijo de un nodo padre indicado. Si este nuevo nodo a insertar es una referencia a un nodo ya existente en el documento, insertBefore lo mueve a la nueva posición indicada.</p>
+      <p class="js-sintax">
+        var insertedNode = parentNode.insertBefore(newNode, referenceNode);
+      </p>
+
     </div>
 
     <h3 onclick="hello(this)">20. Introduction To Events - con objeto this</h3><div>

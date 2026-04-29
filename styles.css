@@ -1,3 +1,6 @@
+
+
+
 body {
   background-color: #0c0c0d;
   color: #d7d7b8;
@@ -12,6 +15,34 @@ h3 {
   color: cornsilk;
 }
 
-.code, .sintaxis {
+/* ************************************************************************* */
+/* *************************************************************** VARIABLES */
+/* ************************************************************************* */
+:root {
+  --bg-code: #0d2a4e;
+  --comentario-color: #666;
+  --color-link: #0d74e1;
+}
+
+
+.code {
   font-family: Source code pro, monospace;
+  background-color: var(--bg-code);
+  font-size: 0.75rem;
+}
+.js-sintax {
+  font-size: 0.75rem;
+  font-family: 'source code pro';
+  display: block; /* cuando es flexbox no tiene efecto */
+  background-color: var(--bg-code);
+  border-radius: 5px;
+  padding: 10px 20px;
+  overflow-x: auto; /* si el contenido es mayor al ancho muestra barra horizontal */
+  /* min-width: 0; hace que los pre no modifiquen el ancho de un item flex. aparentemente funciona bien sin poner esto y poniendo overflow-x: auto (la línea de arriba)*/
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  &::before {
+    content: "Sintaxis JS: ";
+    font-weight: bold;
+  }
 }
